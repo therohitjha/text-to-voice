@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/text-to-voice/static/css/main.60846fa4.chunk.css",
+    "main.js": "/text-to-voice/static/js/main.557660ba.chunk.js",
+    "main.js.map": "/text-to-voice/static/js/main.557660ba.chunk.js.map",
+    "runtime-main.js": "/text-to-voice/static/js/runtime-main.35367228.js",
+    "runtime-main.js.map": "/text-to-voice/static/js/runtime-main.35367228.js.map",
+    "static/js/2.5f926e37.chunk.js": "/text-to-voice/static/js/2.5f926e37.chunk.js",
+    "static/js/2.5f926e37.chunk.js.map": "/text-to-voice/static/js/2.5f926e37.chunk.js.map",
+    "static/js/3.29393e55.chunk.js": "/text-to-voice/static/js/3.29393e55.chunk.js",
+    "static/js/3.29393e55.chunk.js.map": "/text-to-voice/static/js/3.29393e55.chunk.js.map",
+    "index.html": "/text-to-voice/index.html",
+    "static/css/main.60846fa4.chunk.css.map": "/text-to-voice/static/css/main.60846fa4.chunk.css.map",
+    "static/js/2.5f926e37.chunk.js.LICENSE.txt": "/text-to-voice/static/js/2.5f926e37.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35367228.js",
+    "static/js/2.5f926e37.chunk.js",
+    "static/css/main.60846fa4.chunk.css",
+    "static/js/main.557660ba.chunk.js"
+  ]
+}

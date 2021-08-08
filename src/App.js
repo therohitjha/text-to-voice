@@ -26,6 +26,7 @@ export default function App() {
       : { name: "", lang: "" }
   );
   const [select, setSelect] = useState(lang.name && lang.lang);
+  const [selection, setSelection] = useState("");
 
   useEffect(() => {
     (speechSynthesis.speaking || speechSynthesis.paused) &&
@@ -33,7 +34,7 @@ export default function App() {
     speechSynthesis.addEventListener("voiceschanged", function () {
       setVoices(this.getVoices());
     });
-  }, []);
+  }, [select]);
 
   function startSpeak() {
     speech.text = input;
@@ -54,6 +55,7 @@ export default function App() {
       JSON.stringify({ name: getLang.name, lang: getLang.lang })
     );
     setLang({ name: getLang.name, lang: getLang.lang });
+    setSelection(getLang.name);
   }
 
   function handlePitch(event) {
@@ -80,24 +82,28 @@ export default function App() {
     setSelect(false);
     localStorage.clear("lang");
     setLang({ name: "", lang: "" });
+    setSelection("");
     speechSynthesis.cancel();
   }
 
   return (
     <div className="App">
-      <select onChange={handleLang}>
+      <select onChange={handleLang} value={selection}>
         {voices.length ? (
           select ? (
             <option defaultValue={lang.name}>{lang.name}</option>
           ) : (
-            voices.map((item, index) => (
-              <option key={item.name + index} defaultValue={item.name}>
-                {item.name}
-              </option>
-            ))
+            <>
+              <option defaultValue={""}>Default Language</option>
+              {voices.map((item, index) => (
+                <option key={item.name + index} defaultValue={item.name}>
+                  {item.name}
+                </option>
+              ))}
+            </>
           )
         ) : (
-          <option>Something Went Wrong!</option>
+          <option value="">Language Not Available!</option>
         )}
       </select>
       <input
